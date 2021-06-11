@@ -10,16 +10,21 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:codescript.helloWorld"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "codescript.helloWorld",
-        "title": "Hello World"
+    "configuration": {
+      "title": "CodeScript",
+      "properties": {
+        "codescript.searchPaths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
